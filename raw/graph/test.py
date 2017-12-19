@@ -24,7 +24,7 @@ def run_test_case(graph, test_case):
         f, a = func
         f(*a)
     result = str(graph) == tc_expect
-    print '%s, result: %s'%(tc_name, str(result))
+    print(f'{tc_name}, result: {result}')
     return result
 
 def run_test_cases(graph, test_cases):
@@ -32,8 +32,7 @@ def run_test_cases(graph, test_cases):
     pass_number = 0
     for test_case in test_cases:
         if run_test_case(graph, test_case): pass_number += 1
-    print '== Pass rate %3.2f%% (%d out of %d)'%(float(pass_number)/float(total_number)*100,
-                                                 pass_number, total_number)
+    print(f'== Pass rate {float(pass_number)/float(total_number)*100}% ({pass_number} out of {total_number})')
 
 run_test_cases(g, test_cases)
 
