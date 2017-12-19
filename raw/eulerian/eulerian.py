@@ -8,7 +8,7 @@ def isodd(n):
 def check_eulerian(g):
     # odd_vertex_list = [v for v, n in g.iteritems() if isodd(len(n))]
     odd_vertex_list = []
-    for vertex, neighbors in g.iteritems():
+    for vertex, neighbors in g.items():
         if isodd(len(neighbors)):
             odd_vertex_list.append(vertex)
     if len(odd_vertex_list) == 0 or len(odd_vertex_list) == 2:
@@ -16,4 +16,4 @@ def check_eulerian(g):
     else:
         return False,[]
 
-print check_eulerian(graph)
+print(f'{check_eulerian(graph)}')
